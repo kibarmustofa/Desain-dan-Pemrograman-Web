@@ -1,0 +1,9 @@
+.link{
+    font-size: 20px;
+}
+.link:hover{
+    color: greenyellow;
+}
+.link:link{
+    color: blue;
+}
