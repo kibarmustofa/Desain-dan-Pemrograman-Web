@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Input Rata Tengah</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        label {
+            flex: 1;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="date"], textarea {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form id="myForm">
+        <div class="form-group">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="address">Alamat:</label>
+            <textarea id="address" name="comments" rows="3" cols="30">jl.</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="birthday">Tanggal Lahir:</label>
+            <input type="date" id="birthday" name="birthday">
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Jenis Kelamin:</label>
+            <div>
+                <input type="radio" id="male" name="gender" value="r1">
+                <label for="male">Laki-laki</label>
+                <br><br>
+                <input type="radio" id="female" name="gender" value="r2">
+                <label for="female">Perempuan</label>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <label for="hobby">Hobi:</label>
+            <input type="checkbox" id="renang" name="hobby" value="r1">
+            <label for="renang">Berenang</label>
+            <input type="checkbox" id="lari" name="hobby" value="r2">
+            <label for="lari">Berlari</label>
+            <input type="checkbox" id="dll" name="hobby" value="r3">
+            <label for="dll">Lain-lain</label>
+        </div>
+
+        <div class="form-group">
+            <label for="pekerjaan">Pekerjaan:</label>
+            <input type="checkbox" id="swasta" name="pekerjaan" value="r1">
+            <label for="swasta">Swasta</label>
+            <input type="checkbox" id="PNS" name="pekerjaan" value="r2">
+            <label for="PNS">PNS</label>
+            <input type="checkbox" id="dll" name="pekerjaan" value="r3">
+            <label for="dll">Lain-lain</label>
+        </div>
+
+        <input type="submit" name="submit" value="Kirim">
+    </form>
+
+</body>
+</html>
