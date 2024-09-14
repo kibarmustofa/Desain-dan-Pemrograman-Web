@@ -94,5 +94,31 @@
         <input type="submit" name="submit" value="Kirim">
     </form>
 
+    <script>
+        document.getElementById("myForm").onsubmit = function() {
+            
+            let name = document.getElementById("name").value;
+            let address = document.getElementById("address").value;
+            let birthday = document.getElementById("birthday").value;
+
+            if (name === "") {
+                alert("Nama anda belum terisi!");
+                return false; 
+            }
+
+            if (address === "") {
+                alert("Alamat anda belum terisi!");
+                return false; 
+            }
+            
+            if (birthday === "") {
+                alert("tanggal lahir anda belum terisi!");
+                return false; 
+            }
+
+            return true;
+        }
+    </script>
+
 </body>
 </html>
