@@ -74,4 +74,19 @@ $rata_rata = $total / count($nilai_terpilih);
 
 echo "Total nilai (setelah mengabaikan dua nilai tertinggi dan terendah): $total<br>";
 echo "Rata-rata nilai: " . round($rata_rata, 2) . "<br>";
+
+echo "<br><br>";
+
+echo "percobaan 4 soal no (4.7) <br>";
+$hargaAwal = 120000;
+$diskon = 0.2;
+echo "diskon diberikan apabila pembelian lebih dari 100000 <br>";
+echo "harga awal: $hargaAwal <br>";
+if ($hargaAwal >= 100000) {
+    $hargaDiskon = $hargaAwal * $diskon;
+    $hargaAkhir = $hargaAwal - $hargaDiskon;
+    echo "Harga setelah diskon: $hargaAkhir";
+} else {
+    echo "Total harga = $hargaAwal";
+}
 ?>
