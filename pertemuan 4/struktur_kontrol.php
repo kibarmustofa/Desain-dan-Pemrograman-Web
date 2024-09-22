@@ -49,4 +49,29 @@ foreach ($skorUjian as $skor){
 
 echo "Total skor ujian adalah: $totalSkor";
 
+echo "<br><br>";
+
+$nilaiSiswa = [85, 92, 64, 90, 55, 88, 79, 70, 96];
+
+foreach ($nilaiSiswa as $nilai){
+    if ($nilai < 60){
+        echo "Nilai: $nilai (tidak lulus) <br>";
+        continue;
+    }
+    echo "Nilai: $nilai (lulus) <br>";
+}
+
+echo "<br><br>";
+
+echo"percobaan 4 soal no (4.6)<br>";
+$nilai = array(85, 92, 78, 64, 90, 75, 88, 79, 70, 96);
+
+sort($nilai);
+
+$nilai_terpilih = array_slice($nilai, 2, 6);
+$total = array_sum($nilai_terpilih);
+$rata_rata = $total / count($nilai_terpilih);
+
+echo "Total nilai (setelah mengabaikan dua nilai tertinggi dan terendah): $total<br>";
+echo "Rata-rata nilai: " . round($rata_rata, 2) . "<br>";
 ?>
