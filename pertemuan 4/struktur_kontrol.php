@@ -89,4 +89,13 @@ if ($hargaAwal >= 100000) {
 } else {
     echo "Total harga = $hargaAwal";
 }
+
+echo "<br><br>";
+
+echo "percobaan 4 soal no (4.8) <br>";
+$poin = 550;
+$hadiah = ($poin > 500) ? "YA" : "TIDAK";
+echo "Total skor pemain adalah: $poin <br>";
+echo "Apakah pemain mendapatkan hadiah tambahan? $hadiah <br>";
+
 ?>
