@@ -1,9 +1,10 @@
 <?php
-function TampilkanHaloDunia(){
-    echo"Halo dunia!  <br>";
+function tampilkanAngka (int $jumlah, int $indeks = 1){
+    echo "Perulangan ke-{$indeks} <br>";
 
-    TampilkanHaloDunia();
+    if ($indeks < $jumlah) {
+        tampilkanAngka($jumlah, $indeks + 1);
+    }
 }
-
-TampilkanHaloDunia();
+tampilkanAngka(20);
 ?>
