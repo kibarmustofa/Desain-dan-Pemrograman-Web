@@ -7,5 +7,5 @@ function perkenalan() {
 
 // Memanggil fungsi yang sudah dibuat
 perkenalan();
-
+perkenalan();
 ?>
