@@ -50,4 +50,15 @@ if (preg_match($pattern, $text, $matches)) {
 } else {
     echo "Tidak ada yang cocok!";
 }
+echo "<br><br>";
+echo "memastikan kata yang hampir cocok dari segi o	{n,m}: Setidaknya n kali, maksimal m kali   patern dari text sample<br>";
+
+$pattern = '/go{2,3}d/'; // Cocokkan "gd", "god", "good", dll.
+$text = 'god is good.';
+
+if (preg_match($pattern, $text, $matches)) {
+    echo "Cocokkan: " . $matches[0];
+} else {
+    echo "Tidak ada yang cocok!";
+}
 ?>
