@@ -1,4 +1,4 @@
-<?php
+<?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama = $_POST['nama'];
     $email = $_POST['email'];
@@ -23,9 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo $error . "<br>";
         }
     } else {
-        // Lanjutkan dengan pemrosesan data jika semua validasi berhasil
-        // Misalnya, menyimpan data ke database atau mengirim email
-        echo "Data berhasil dikirim: Nama = $nama, Email = $email";
+        // Semua validasi berhasil
+        echo "Data berhasil dikirim: Nama = " . htmlspecialchars($nama) . ", Email = " . htmlspecialchars($email);
     }
 }
 ?>
