@@ -12,8 +12,12 @@
         <span id="nama-error" style="color:red;"></span><br>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
+        <input type="text" id="email" name="email">
         <span id="email-error" style="color:red;"></span><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <span id="password-error" style="color:red;"></span><br>
 
         <input type="submit" value="Submit">
     </form>
@@ -23,15 +27,17 @@
     <script>
         $(document).ready(function() {
             $("#myForm").submit(function(e) {
-                e.preventDefault();
+                e.preventDefault(); // Mencegah pengiriman form secara default
 
                 var nama = $("#nama").val();
                 var email = $("#email").val();
+                var password = $("#password").val();
                 var valid = true;
 
                 // Reset pesan kesalahan
                 $("#nama-error").text("");
                 $("#email-error").text("");
+                $("#password-error").text("");
 
                 // Validasi Nama
                 if (nama === "") {
@@ -39,12 +45,18 @@
                     valid = false;
                 }
 
-                // Validasi Email menggunakan tipe input "email"
+                // Validasi Email
                 if (email === "") {
                     $("#email-error").text("Email harus diisi.");
                     valid = false;
-                } else if (!$("#email")[0].checkValidity()) {
-                    $("#email-error").text("Format email tidak valid.");
+                }
+
+                // Validasi Password
+                if (password === "") {
+                    $("#password-error").text("Password harus diisi.");
+                    valid = false;
+                } else if (password.length < 8) {
+                    $("#password-error").text("Password minimal harus 8 karakter.");
                     valid = false;
                 }
 
@@ -53,7 +65,7 @@
                     $.ajax({
                         url: "proses_validasi.php",
                         type: "POST",
-                        data: { nama: nama, email: email },
+                        data: { nama: nama, email: email, password: password },
                         success: function(response) {
                             $("#hasil").html(response);
                         },
