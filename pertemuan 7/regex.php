@@ -29,7 +29,7 @@ $new_text = preg_replace($pattern, $replacement, $text);
 echo $new_text; // Output: "I like banana pie."
 
 echo "<br><br>";
-echo "memastikan kata yang hampir cocok dari segi o	*: 0 atau lebih kali  patern dari text sample<br>";
+echo "memastikan kata yang hampir cocok dari segi  patern *: 0 atau lebih kali dari text sample<br>";
 
 $pattern = '/go*d/'; // Cocokkan "god", "good", "gooood", dll.
 $text = 'god is good.';
@@ -40,7 +40,7 @@ if (preg_match($pattern, $text, $matches)) {
     echo "Tidak ada yang cocok!";
 }
 echo "<br><br>";
-echo "memastikan kata yang hampir cocok dari segi ?: 0 atau 1 kali  patern dari text sample<br>";
+echo "memastikan kata yang hampir cocok dari  patern ?: 0 atau 1 kali dari text sample<br>";
 
 $pattern = '/go?d/'; // Cocokkan "gd", "god", "good", dll.
 $text = 'god is good.';
@@ -51,7 +51,7 @@ if (preg_match($pattern, $text, $matches)) {
     echo "Tidak ada yang cocok!";
 }
 echo "<br><br>";
-echo "memastikan kata yang hampir cocok dari segi o	{n,m}: Setidaknya n kali, maksimal m kali   patern dari text sample<br>";
+echo "memastikan kata yang hampir cocok dari patern {n,m}: Setidaknya n kali, maksimal m kali dari text sample<br>";
 
 $pattern = '/go{2,3}d/'; // Cocokkan "gd", "god", "good", dll.
 $text = 'god is good.';
