@@ -51,4 +51,3 @@ if (preg_match($pattern, $text, $matches)) {
     echo "Tidak ada yang cocok!";
 }
 ?>
-?>
