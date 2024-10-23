@@ -11,7 +11,15 @@ header {
     color: white;
     padding: 20px;
 }
+#informasi-singkat p {
+    font-size: 24px; 
+    line-height: 1.5; 
+}
 
+#informasi-singkat h2 {
+    font-size: 36px; 
+    font-weight: bold; 
+}
 nav ul {
     list-style-type: none;
     padding: 0;
