@@ -1,5 +1,5 @@
 document.getElementById('imageUploadForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Mencegah form dari reload halaman
+    event.preventDefault(); 
 
     var formData = new FormData(this);
 

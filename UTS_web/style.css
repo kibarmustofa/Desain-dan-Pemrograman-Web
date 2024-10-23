@@ -27,6 +27,29 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
+.social-media {
+    margin-top: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons img {
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+#slideshow {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
 
 #slideshow {
     overflow: hidden;
@@ -37,7 +60,7 @@ nav ul li a {
 
 .slide-track {
     display: flex;
-    width: calc(250px * 12); /* Total lebar untuk 12 slide */
+    width: calc(250px * 10); /* Total lebar untuk 10 slide */
     animation: scroll 20s linear infinite;
 }
 
@@ -59,10 +82,10 @@ nav ul li a {
         transform: translateX(0);
     }
     50% {
-        transform: translateX(calc(-250px * 3)); /* Setengah dari setengah jumlah slide */
+        transform: translateX(calc(-250px * 5)); /* Setengah perjalanan */
     }
     100% {
-        transform: translateX(calc(-250px * 6)); /* Geser setengah dari jumlah slide */
+        transform: translateX(0); /* Kembali ke posisi awal */
     }
 }
 
@@ -206,4 +229,47 @@ nav ul li a {
     color: #ccc;
     padding: 10px 0;
     height: 150px;
+}
+.komen-saran {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.komen-saran h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.komen-saran textarea {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.komen-saran button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 1.1em;
 }
