@@ -1,31 +1,22 @@
-$(document).ready(function () {
-    const slideTrack = document.querySelector('.slide-track');
-const slides = document.querySelectorAll('.slide');
-const slideWidth = 350 + 40; 
-let currentIndex = 1; 
-const totalSlides = slides.length;
+document.getElementById('imageUploadForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah form dari reload halaman
 
-function startSlideshow() {
-    setInterval(() => {
-        currentIndex++;
+    var formData = new FormData(this);
 
-        if (currentIndex === totalSlides - 1) {
-            
-            slideTrack.style.transition = 'none';
-            currentIndex = 1;
-            slideTrack.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'upload.php', true);
 
-           
-            setTimeout(() => {
-                slideTrack.style.transition = 'transform 1s linear';
-            }, 20);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            // Tampilkan status upload
+            document.getElementById('uploadStatus').innerHTML = xhr.responseText;
+            // Refresh gallery setelah upload
+            location.reload();
         } else {
-            
-            slideTrack.style.transition = 'transform 1s linear';
-            slideTrack.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+            document.getElementById('uploadStatus').innerHTML = 'Terjadi kesalahan saat mengupload file.';
         }
-    }, 3000); 
-}
+    };
 
-startSlideshow();
+    xhr.send(formData);
 });
+

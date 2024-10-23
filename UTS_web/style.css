@@ -12,6 +12,22 @@ header {
     padding: 20px;
 }
 
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 #slideshow {
     overflow: hidden;
     width: 100%;
@@ -21,13 +37,13 @@ header {
 
 .slide-track {
     display: flex;
-    width: calc(250px * 20);
+    width: calc(250px * 12); /* Total lebar untuk 12 slide */
     animation: scroll 20s linear infinite;
 }
 
 .slide {
-    width: 250px;
-    height: 200px;
+    width: 250px; /* Lebar setiap gambar */
+    height: 200px; /* Tinggi setiap gambar */
     margin: 10px;
 }
 
@@ -42,35 +58,152 @@ header {
     0% {
         transform: translateX(0);
     }
+    50% {
+        transform: translateX(calc(-250px * 3)); /* Setengah dari setengah jumlah slide */
+    }
     100% {
-        transform: translateX(calc(-250px * 10));
+        transform: translateX(calc(-250px * 6)); /* Geser setengah dari jumlah slide */
     }
 }
 
-.dashboard {
+.dashboard, .collage, .upload-form, .gallery {
     padding: 20px;
 }
 
 .collage {
-    padding: 20px;
+    font-style: normal;
+    color: #ddf652;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
 }
-
+.collage h2 {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
 .collage-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-.grid-item img {
-    width: 100%;
-    border-radius: 5px;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    gap: 5px; /* Mengurangi jarak antar gambar */
+    justify-content: center;
 }
 
 .upload-form {
-    padding: 20px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin: 20px auto;
     width: 80%;
+}
+
+.grid-item {
+    position: relative;
+    width: 100%; /* Ukuran penuh untuk kolom */
+    height: 0;
+    padding-top: 100%; /* Membuat persegi sempurna */
+    overflow: hidden; /* Sembunyikan overflow */
+    cursor: pointer;
+}
+
+.grid-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mengatur gambar agar sesuai */
+}
+
+.grid-item .post-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+}
+
+.grid-item:hover .post-header {
+    display: block;
+}
+
+.delete-btn {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.grid-item:hover .delete-btn {
+    display: block;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content, .close {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
 }
