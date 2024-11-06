@@ -21,24 +21,18 @@ $stmt = sqlsrv_query($conn, $sql);
 <head>
     <meta charset="UTF-8">
     <title>Game Collection</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Kuesioner Game Favorit</h1>
+        <p>Data ini akan memberikan insight untuk pengembangan game ke depannya.</p>
+    </header>
+
     <h1>Daftar Game</h1>
+
     <a href="create.php">Tambahkan Data</a>
+    <div>
     <table>
         <tr>
             <th>ID</th>
@@ -64,6 +58,7 @@ $stmt = sqlsrv_query($conn, $sql);
             </tr>
         <?php endwhile; ?>
     </table>
+    </div>
 </body>
 </html>
 

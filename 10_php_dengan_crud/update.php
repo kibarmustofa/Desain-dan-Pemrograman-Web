@@ -44,18 +44,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Edit Data Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Edit Data Game</h1>
-    <form method="post">
-        Nama: <input type="text" name="nama" value="<?php echo $row['nama']; ?>" required><br>
-        Genre Game: <input type="text" name="genre_game" value="<?php echo $row['genre_game']; ?>" required><br>
-        Game Favorit: <input type="text" name="game_favorit" value="<?php echo $row['game_favorit']; ?>" required><br>
-        Tahun Rilis: <input type="number" name="tahun_rilis" value="<?php echo $row['tahun_rilis']; ?>" required><br>
-        Perangkat Bermain: <input type="text" name="perangkat_bermain" value="<?php echo $row['perangkat_bermain']; ?>" required><br>
-        <input type="submit" value="Perbarui">
-    </form>
-    <a href="index.php">Kembali</a>
+    <header>
+        <h1>Kuesioner Game Favorit</h1>
+        <p>Data ini akan memberikan insight untuk pengembangan game ke depannya.</p>
+    </header>
+
+        <h2>Edit Data Game</h2>
+        <form method="post">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" value="<?php echo $row['nama']; ?>" required>
+            
+            <label for="genre_game">Genre Game:</label>
+            <input type="text" id="genre_game" name="genre_game" value="<?php echo $row['genre_game']; ?>" required>
+            
+            <label for="game_favorit">Game Favorit:</label>
+            <input type="text" id="game_favorit" name="game_favorit" value="<?php echo $row['game_favorit']; ?>" required>
+            
+            <label for="tahun_rilis">Tahun Rilis:</label>
+            <input type="number" id="tahun_rilis" name="tahun_rilis" value="<?php echo $row['tahun_rilis']; ?>" required>
+            
+            <label for="perangkat_bermain">Perangkat Bermain:</label>
+            <input type="text" id="perangkat_bermain" name="perangkat_bermain" value="<?php echo $row['perangkat_bermain']; ?>" required>
+            
+            <input type="submit" value="Perbarui">
+        </form>
+        <a href="index.php" class="back-link">Kembali</a>
 </body>
 </html>
 

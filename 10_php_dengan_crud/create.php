@@ -37,8 +37,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Tambah Data Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Kuesioner Game Favorit</h1>
+        <p>Data ini akan memberikan insight untuk pengembangan game ke depannya.</p>
+    </header>
     <h1>Tambah Data Game</h1>
     <form method="post">
         Nama: <input type="text" name="nama" required><br>
